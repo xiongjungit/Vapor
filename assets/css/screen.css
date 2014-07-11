@@ -516,6 +516,9 @@ table tfoot {
     display: block;
   }
   blockquote p {
-    font-size: 1.1em;
+    font-size: 18px;
+  }
+  .ds-thread {
+    display: none;
   }
 }
