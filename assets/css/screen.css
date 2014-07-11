@@ -515,4 +515,7 @@ table tfoot {
   .page-number {
     display: block;
   }
+  blockquote p {
+    font-size: 1.1em;
+  }
 }
