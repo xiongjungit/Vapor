@@ -7,9 +7,9 @@
         {{#post}}
 
         <header>
-        {{#if tags}}<div class="post-meta tags">Posted in {{tags}}</div>{{/if}}
+        {{#if tags}}<div class="post-meta tags">发布于 {{tags}}</div>{{/if}}
         <h1 class="post-title">{{{title}}}</h1>
-        <div class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="dddd, MMMM DD, YYYY"}}</time></div>
+        <div class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="YYYY - MM - dd dddd"}}</time></div>
         </header>
 
         <section class="post-content">
@@ -17,7 +17,15 @@
         </section>
 
         <section class="share">
-            <p class="info prompt">Share this post</p>
+            <p class="info prompt">分享这篇文章</p>
+            <a class="icon-share" href="http://service.weibo.com/share/share.php?url={{url absolute="true"}}&title={{title}}" 
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-2x fa-fw fa-weibo"></i> <span class="hidden">WeiBo</span>
+            </a>
+            <a class="icon-share" href=" http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?desc={{title}}&url={{url absolute="true"}}" 
+                onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                <i class="fa fa-2x fa-fw fa-qq"></i> <span class="hidden">Qzone</span>
+            </a>
             <a href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}"
                 onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                 <i class="fa fa-2x fa-fw fa-twitter"></i> <span class="hidden">Twitter</span>
@@ -37,7 +45,7 @@
             {{#if author}}
             <section class="author">
                 <div class="authorimage" style="background: url({{author.image}})"></div>
-                <p class="attr">Author</p>
+                <p class="attr">作者</p>
                 <h4><a href="{{author.website}}">{{author.name}}</a></h4>
                 <p class="bio">{{author.bio}}</p>
             </section>
